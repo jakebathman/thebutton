@@ -103,7 +103,7 @@ var TimeChart = React.createClass({
             .attr("x2", width - this.margins.right);
         this.medianLabel = chart.append("text")
             .attr("x", this.margins.left)
-            .attr("dy", ".35em")
+            .attr("dy", (this.state.displayMean ? (this.meanLabel.attr("dy")+.35) + "em" : ".35em")
             .attr("dx", -5);
         this.updateAverage(this.median, this.medianLabel, this.props.median,
             this.state.displayMedian, "M");
